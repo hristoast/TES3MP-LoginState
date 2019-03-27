@@ -1,18 +1,3 @@
---[[
-   LoginState --- Ensure that certain items are present when they need to be.
-
-   METHOD USAGE:
-
-   1) Place `LoginState.lua` into your `CoreScripts/scripts` directory.  Symlinks are OK.
-
-   2) Add the following to `CoreScripts/scripts/customScripts.lua`:
-
-       require("LoginState")
-
-   VERSION: 2
-
---]]
-
 local LoginState = {}
 
 config.ensure_caius_package = true
