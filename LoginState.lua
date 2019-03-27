@@ -2,7 +2,7 @@ local LoginState = {}
 
 config.ensure_caius_package = true
 LoginState.ncgd_init_ran = false
-LoginState.use_ncgd = true
+LoginState.use_ncgd = false
 
 local function dbg(msg)
    --[[ Convenient logging wrapper. ]]--
