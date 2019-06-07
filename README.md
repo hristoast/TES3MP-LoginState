@@ -2,6 +2,8 @@
 
 Set up a specific login state for players.
 
+* Ensures each player has the package for Caius if that quest isn't completed.
+
 ## Installation
 
 1. Place `LoginState.lua` into your `CoreScripts/scripts/custom/` directory.
@@ -10,6 +12,3 @@ Set up a specific login state for players.
 
         require("custom/LoginState/main")
 
-## Caius Package
-
-Ensures players have the package for Caius when they log on, in case a quest reset was done.  Set `config.ensure_caius_package` to `false` if you don't want this.
