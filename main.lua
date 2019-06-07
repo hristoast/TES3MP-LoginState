@@ -3,7 +3,7 @@ local LoginState = {}
 
 local function dbg(msg)
    --[[ Convenient logging wrapper. ]]--
-   tes3mp.LogMessage(enumerations.log.VERBOSE, "[ UniqueItems ]: " .. msg)
+   tes3mp.LogMessage(enumerations.log.VERBOSE, "[ LoginState ]: " .. msg)
 end
 
 LoginState.ensureCaiusPkg = function(eventStatus, pid)
