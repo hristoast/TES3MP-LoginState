@@ -12,21 +12,20 @@ LoginState.ensureCaiusPkg = function(eventStatus, pid)
       in the case that there was a quest reset and the player
       already gave him the package.
    --]]
-   if config.ensure_caius_package then
-      local caiuspkg = { refId = "bk_a1_1_caiuspackage", count = 1, charge = -1 }
-      local player = Players[pid]
+   local caiuspkg = { refId = "bk_a1_1_caiuspackage", count = 1, charge = -1 }
+   local player = Players[pid]
 
-      if tableHelper.containsValue(WorldInstance.data.topics, "report to caius cosades") == false then
-         dbg("LoginState: Quest 'report to caius' has not been completed!")
-         local hasPkg = inventoryHelper.getItemIndex(player.data.inventory, "bk_a1_1_caiuspackage", -1)
-         if hasPkg then
-            dbg("LoginState: " .. player.accountName .. " has the package for Caius !")
-         else
-            dbg("LoginState: Ensuring the caius package in " .. player.accountName .."'s inventory !")
-            table.insert(player.data.inventory, caiuspkg)
+   if tableHelper.containsValue(WorldInstance.data.topics, "report to caius cosades") == false then
+      dbg("Quest 'report to caius' has not been completed!")
+      local hasPkg = inventoryHelper.getItemIndex(player.data.inventory, "bk_a1_1_caiuspackage", -1)
+      if hasPkg then
+         dbg(player.name .. " has the package for Caius !")
+      else
+         dbg("Ensuring the caius package in " .. player.name .."'s inventory !")
+         table.insert(player.data.inventory, caiuspkg)
 
-            player:LoadInventory()
-         end
+         player:LoadInventory()
+         player:LoadEquipment()
       end
    end
 end
