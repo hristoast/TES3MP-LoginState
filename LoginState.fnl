@@ -2,6 +2,8 @@
   (tes3mp.LogMessage enumerations.log.VERBOSE (.. "[ LoginState ]: " msg)))
 
 (fn LoginState.ensureCaiusPkg [event-status pid]
+  "Ensure that the player has the package for Caius Cosades, in the case
+   that there was a quest reset and the player already gave him the package."
   (let [caiuspkg "todo"
         caiustopic "report to caius cosades"
         player (. Players pid)]
