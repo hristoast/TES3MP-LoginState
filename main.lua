@@ -26,7 +26,7 @@ LoginState.ensureCaiusPkg = function(eventStatus, pid)
 
          player:LoadInventory()
          player:LoadEquipment()
-         player:QuickSaveToDrive()
+         player:QuicksaveToDrive()
       end
    end
 end
